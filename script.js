@@ -1,11 +1,6 @@
 const Dny_v_tydnu = ["neděle","pondělí","úterý","středa","čtvrtek","pátek","sobota"];
 const Mesice = ["ledna","února","března","dubna","května","června","července","srpna","září","října","listopadu","prosince"]
 
-
-
-
-
-
 function poNacteni() {
   let x = new Date();
   let d = x.getDay();
@@ -23,22 +18,22 @@ function poNacteni() {
 function cas() {
   let t = new Date();
   let time = t.toLocaleTimeString();
-  //console.log(time);
+  //console.log(time); //test vypisu
   document.getElementById("time").innerHTML = time;  
 } 
 
 function Patek_13(){
-  let a_mes = new Date().getMonth();
+  let a_mes = new Date().getMonth();  //sebrání měsíce
   let mes = 12;
   let vypis_p = " "
   for (let i = 0; i <= mes; i++){
-    let datum = new Date (2020, a_mes + i, 13).getDay();
+    let datum = new Date (2020, a_mes + i, 13).getDay();  //filtr 13. dne v měsíci
     if(datum == 5){
       let den = new Date (2020, a_mes + i, 13).toLocaleDateString();
-      vypis_p = vypis_p + den + ", ";
+      vypis_p = vypis_p + den + ", ";  // psaní do výpisu
     }
   }
-  vypis_p += "."
+  vypis_p += "."; //ukončení výpisu
   document.getElementById("vypis_p").innerHTML = vypis_p;
-  console.log(vypis_p);
+  console.log(vypis_p); //test vypisu
 }
